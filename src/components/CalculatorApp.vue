@@ -54,7 +54,6 @@ export default {
                 this.calculatorValue = Math.sqrt(this.previousCalculatorValue);
             }
 
-
         }
         // calculate value
         if (n === "=") {
@@ -63,7 +62,6 @@ export default {
             this.previousCalculatorValue = '';
             this.operator = null;
         }
-
       },
   }
 };
@@ -120,9 +118,11 @@ export default {
 .bg-vue-dark{
     background: #31475e;
 }
+.hover-class{transition: all 0.5s;}
 .hover-class:hover{
     cursor: pointer;
     background: #3d5875;
+    transition: all 0.5s;
 }
 .bg-vue-green{
     background: #3fb984;
