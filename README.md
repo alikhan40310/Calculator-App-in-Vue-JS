@@ -27,3 +27,16 @@ npm run dev
 ```sh
 npm run build
 ```
+# About this project
+
+## CalculatorApp
+It's a awesome calculator app develop in Vue js
+
+## Bootstrap
+Design an elements using Bootstrap
+
+## Responsive
+It's also responsive on mobile view
+
+### Simple UnderstandCoding
+simple techniques used to develop this project

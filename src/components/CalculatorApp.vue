@@ -21,9 +21,10 @@ export default {
         1,
         2,
         3,
-        "=",
+        '√',
         0,
         ".",
+        "="
       ],
       operator:null,
       previousCalculatorValue: '',
@@ -43,11 +44,17 @@ export default {
         if (n === "%") {
             this.calculatorValue = this.calculatorValue / 100;
         }
-        if(['/','*','-','+'] .includes(n)){
+        
+        if(['/','*','-','+','√'].includes(n)){
             this.operator = n;
             this.previousCalculatorValue = this.calculatorValue;
-
             this.calculatorValue = '';
+            // square root
+            if(n === '√'){
+                this.calculatorValue = Math.sqrt(this.previousCalculatorValue);
+            }
+
+
         }
         // calculate value
         if (n === "=") {
@@ -56,6 +63,7 @@ export default {
             this.previousCalculatorValue = '';
             this.operator = null;
         }
+
       },
   }
 };
@@ -68,12 +76,11 @@ export default {
         <div class="main-bg">
           {{ calculatorValue || 0 }}
         </div>
-        <div class="row no-gutters">
-          <div class="col-3" v-for="n in calculatorElement" :key="n">
-            <div class="lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class"
-            :class="{'bg-vue-green': ['C','*','/','-','+','%', '='].includes(n)}"
-            @click="action(n)"
-            >
+        <div class="d-flex flex-wrap mt-4">
+          <div class="col-3 " :class="{'col-6': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
+            <div class="fonts lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class" 
+            :class="{'bg-vue-green': ['C','√', '*','/','-','+','%', '='].includes(n)}"
+            @click="action(n)">
                 {{ n }}
             </div>
           </div>
@@ -84,20 +91,24 @@ export default {
 </template>
 
 <style scoped>
+
 .items {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 10rem;
+  width: 100%;
+
 }
 .content {
   background: #234;
-  width: 40%;
+  width: auto;
   border-radius: 5px;
+  margin-top: 10rem;
   text-align: right;
   font-weight: bold;
   font-size: 30px;
+  height: 100%;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 .main-bg {
@@ -115,5 +126,9 @@ export default {
 }
 .bg-vue-green{
     background: #3fb984;
+}
+.fonts{
+    font-size: 22px;
+    font-weight: 600;
 }
 </style>
