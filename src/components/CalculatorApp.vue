@@ -1,5 +1,5 @@
 
-<style>
+<style> 
 
 .items {
   display: flex;
@@ -11,7 +11,7 @@
 .content {
   background: #234;
   width: auto;
-  border-radius: 5px;
+  border-radius: 25px;
   margin-top: 10rem;
   text-align: right;
   font-weight: bold;
@@ -26,8 +26,8 @@
   font-weight: bold;
   color: var(--inside-color);
   font-size: 50px;
+  margin-bottom: 10px;
 }
-
 .bg-vue-dark{
     background: #223341;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);

@@ -14,7 +14,7 @@
   :root {
     --bg-color: #ffb47c;
     --calcalulator-bg-color: #234;
-    --btn-color: #223341;
+    --btn-color: #223949;
     --text-color:#fff;
     --inside-color: #fff;
     --hover-color: #f88238;
@@ -47,3 +47,4 @@ body {
   background: var(--calcalulator-bg-color);
 }
 .fonts{font-weight: bold;}
+.cusmar{padding-bottom: 100px;}
