@@ -1,4 +1,67 @@
 
+<style> 
+
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 12%;
+}
+.content {
+  background: #234;
+  width: auto;
+  border-radius: 30px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 30px;
+  height: 100%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 8rem;
+  padding-bottom: 20%;
+}
+.main-bg {
+  background: transparent;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--inside-color);
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+.bg-vue-dark{
+    background: #223341;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+.hover-class{transition: all .5s ease;}
+.hover-class:hover{
+    cursor: pointer;
+    background: var(--hover-color);
+    transition: all 0.5s ease;
+    color: var(--hover-text-color);
+}
+.fonts{
+    font-weight: 600;
+    border-radius: 25px;
+    color: var(--text-color);
+} 
+.text-orange{
+    /* background: #3fb984; */
+    color: var(--text-orange);
+}
+.bg-vue-dark{
+  background: var(--btn-color);
+}
+.bg-vue-orange{
+  background-color: #f88238;
+  color: #fff;
+    border-radius: 10px;
+
+}
+</style>
+
+
 <script>
 export default {
   name: "Calculator",
@@ -36,6 +99,9 @@ export default {
           if (!isNaN(n) || n === ".") {
               this.calculatorValue +=n + '';
           }
+          // when user enter the value, the length of the value is less then 12
+                   
+ 
         //   clear value
         if (n === "C") {
             this.calculatorValue = "";
@@ -53,7 +119,6 @@ export default {
             if(n === '√'){
                 this.calculatorValue = Math.sqrt(this.previousCalculatorValue);
             }
-
         }
         // calculate value
         if (n === "=") {
@@ -62,6 +127,7 @@ export default {
             this.previousCalculatorValue = '';
             this.operator = null;
         }
+
       },
   }
 };
@@ -75,9 +141,9 @@ export default {
           {{ calculatorValue || 0 }}
         </div>
         <div class="d-flex flex-wrap mt-4">
-          <div class="col-3 " :class="{'col-6': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
-            <div class="fonts lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class" 
-            :class="{'bg-vue-green': ['C','√', '*','/','-','+','%', '='].includes(n)}"
+          <div class="col-3 " :class="{'col-6 ': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
+            <div class="fonts lead text-center m-1 py-4 bg-vue-dark  hover-class"  
+            :class="{'text-orange ': ['C','√', '*','/','-','+','%', '='].includes(n)},[ {'bg-vue-orange themecolor': ['='].includes(n)}]"
             @click="action(n)">
                 {{ n }}
             </div>
@@ -88,47 +154,3 @@ export default {
   </div>
 </template>
 
-<style scoped>
-
-.items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
-
-}
-.content {
-  background: #234;
-  width: auto;
-  border-radius: 5px;
-  margin-top: 10rem;
-  text-align: right;
-  font-weight: bold;
-  font-size: 30px;
-  height: 100%;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-.main-bg {
-  background: #31475e;
-  padding: 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.bg-vue-dark{
-    background: #31475e;
-}
-.hover-class{transition: all 0.5s;}
-.hover-class:hover{
-    cursor: pointer;
-    background: #3d5875;
-    transition: all 0.5s;
-}
-.bg-vue-green{
-    background: #3fb984;
-}
-.fonts{
-    font-size: 22px;
-    font-weight: 600;
-}
-</style>
