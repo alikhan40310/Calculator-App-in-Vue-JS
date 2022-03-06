@@ -11,7 +11,7 @@
 .content {
   background: #234;
   width: auto;
-  border-radius: 25px;
+  border-radius: 30px;
   margin-top: 10rem;
   text-align: right;
   font-weight: bold;
@@ -41,7 +41,7 @@
 }
 .fonts{
     font-weight: 600;
-    border-radius: 40px;
+    border-radius: 25px;
     color: var(--text-color);
 } 
 .text-orange{
@@ -140,7 +140,7 @@ export default {
         </div>
         <div class="d-flex flex-wrap mt-4">
           <div class="col-3 " :class="{'col-6': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
-            <div class="fonts lead text-center m-1 py-3 bg-vue-dark  hover-class"  
+            <div class="fonts lead text-center m-1 py-4 bg-vue-dark  hover-class"  
             :class="{'text-orange': ['C','√', '*','/','-','+','%', '='].includes(n)},[ {'bg-vue-orange': ['='].includes(n)}]"
             @click="action(n)">
                 {{ n }}
