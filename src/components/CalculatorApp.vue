@@ -141,7 +141,7 @@ export default {
           {{ calculatorValue || 0 }}
         </div>
         <div class="d-flex flex-wrap mt-4">
-          <div class="col-3 " :class="{'col-6 ': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
+          <div class="col-3" :class="{'col-6 ': ['='].includes(n)}" v-for="n in calculatorElement" :key="n">    
             <div class="fonts lead text-center m-1 py-4 bg-vue-dark  hover-class"  
             :class="{'text-orange ': ['C','√', '*','/','-','+','%', '='].includes(n)},[ {'bg-vue-orange themecolor': ['='].includes(n)}]"
             @click="action(n)">
