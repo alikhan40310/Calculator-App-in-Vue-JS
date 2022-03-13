@@ -11,7 +11,7 @@
 }
 .content {
   background: #234;
-  width: auto;
+  width: 25vw;
   border-radius: 30px;
   text-align: right;
   font-weight: bold;
@@ -20,6 +20,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   margin-top: 8rem;
   padding-bottom: 20%;
+  word-wrap: break-word;
 }
 .main-bg {
   background: transparent;
@@ -56,8 +57,26 @@
 .bg-vue-orange{
   background-color: #f88238;
   color: #fff;
-    border-radius: 10px;
+  border-radius: 10px;
+}
+@media (max-width: 1300px) {
+  .content{
+    width:auto;
+  }
+}
+@media screen and (max-width:600px){
+  .content{
+    width:80%;
+    font-size: 10px;
+  }
+  .main-bg{font-size: 40px;}
+}
 
+@media screen and (max-width:479px){
+  .content{
+    width: 100%;
+  }
+  .main-bg{font-size: 35px;}
 }
 </style>
 
